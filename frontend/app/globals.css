@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+/* Base tweaks */
+html, body {
+  height: 100%;
+  background-color: #FAF8F5;
+  color: #1A1A1A;
+}
+
+.font-serif-luxury {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #FAF8F5; }
+::-webkit-scrollbar-thumb { background: #D1C7BA; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #B8AC9C; }

@@ -1,0 +1,26 @@
+﻿# Dependencies
+node_modules/
+vendor/
+
+# Next.js
+.next/
+out/
+build/
+
+# Desktop binaries
+*.exe
+*.pdb
+bin/
+obj/
+
+# Logs & cache
+*.log
+.DS_Store
+storage/logs/*.log
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

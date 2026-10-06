@@ -1,0 +1,138 @@
+﻿<UserControl x:Class="LaundryAdminApp.Views.DashboardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="Transparent">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="14,6,14,20">
+            <!-- Top Controls -->
+            <Grid Margin="0,0,0,16">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock Text="Operations Overview" FontSize="18" FontWeight="Bold" Foreground="#F8FAFC"/>
+                    <TextBlock Text="{Binding StatusMessage}" FontSize="12" Foreground="#94A3B8"
+                               Margin="16,0,0,0" VerticalAlignment="Center"/>
+                </StackPanel>
+                <Button Content="Refresh Stats" Style="{StaticResource SecondaryButton}"
+                        Command="{Binding RefreshCommand}" HorizontalAlignment="Right" Padding="14,7"/>
+            </Grid>
+
+            <!-- Magazine Editorial Banner -->
+            <Border Background="#101935" BorderBrush="#283556" BorderThickness="1" CornerRadius="12" Margin="0,0,0,18" Padding="20">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                        <TextBlock Text="EDITION N° 26 — ARTISANAL TEXTILE &amp; VALET ATELIER"
+                                   FontSize="10" FontWeight="Bold" Foreground="#06B6D4"/>
+                        <TextBlock Text="The Architecture of Pristine Living."
+                                   FontSize="22" FontWeight="Black" Foreground="#F8FAFC" Margin="0,4,0,4"/>
+                        <TextBlock Text="Live real-time monitoring of customer collections, garment steam cycles, and revenue dispatch."
+                                   FontSize="12" Foreground="#94A3B8"/>
+                    </StackPanel>
+                    <Border Grid.Column="1" Background="#172242" CornerRadius="8" Padding="16,10" VerticalAlignment="Center" Margin="16,0,0,0" BorderBrush="#283556" BorderThickness="1">
+                        <StackPanel HorizontalAlignment="Center">
+                            <TextBlock Text="ATELIER SYNC" FontSize="9" FontWeight="Bold" Foreground="#64748B" HorizontalAlignment="Center"/>
+                            <TextBlock Text="LIVE OPERATIONAL" FontSize="11" FontWeight="Bold" Foreground="#10B981" HorizontalAlignment="Center" Margin="0,2,0,0"/>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </Border>
+
+            <!-- Metrics Cards (4 Columns) -->
+            <UniformGrid Columns="4" Margin="0,0,0,18">
+                <!-- Card 1: Revenue -->
+                <Border Style="{StaticResource Card}">
+                    <StackPanel>
+                        <TextBlock Text="TOTAL REVENUE" FontSize="11" FontWeight="Bold" Foreground="#94A3B8" Margin="0,0,0,8"/>
+                        <TextBlock Text="{Binding Metrics.FormattedRevenueTotal, FallbackValue='₦0'}"
+                                   FontSize="26" FontWeight="Black" Foreground="#06B6D4"/>
+                        <TextBlock Text="{Binding Metrics.FormattedRevenueToday, StringFormat='{}Today: {0}'}"
+                                   FontSize="12" Foreground="#34D399" Margin="0,6,0,0" FontWeight="SemiBold"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Card 2: Orders -->
+                <Border Style="{StaticResource Card}">
+                    <StackPanel>
+                        <TextBlock Text="TOTAL ORDERS" FontSize="11" FontWeight="Bold" Foreground="#94A3B8" Margin="0,0,0,8"/>
+                        <TextBlock Text="{Binding Metrics.TotalOrders, FallbackValue='0'}"
+                                   FontSize="26" FontWeight="Black" Foreground="#38BDF8"/>
+                        <TextBlock Text="{Binding Metrics.TodayOrders, StringFormat='{}New Today: {0}'}"
+                                   FontSize="12" Foreground="#94A3B8" Margin="0,6,0,0"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Card 3: Pending / Active -->
+                <Border Style="{StaticResource Card}">
+                    <StackPanel>
+                        <TextBlock Text="IN-PROGRESS ORDERS" FontSize="11" FontWeight="Bold" Foreground="#94A3B8" Margin="0,0,0,8"/>
+                        <TextBlock Text="{Binding Metrics.PendingOrders, FallbackValue='0'}"
+                                   FontSize="26" FontWeight="Black" Foreground="#F59E0B"/>
+                        <TextBlock Text="Awaiting Pickup / Washing" FontSize="12" Foreground="#94A3B8" Margin="0,6,0,0"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Card 4: Delivered -->
+                <Border Style="{StaticResource Card}">
+                    <StackPanel>
+                        <TextBlock Text="DELIVERED ORDERS" FontSize="11" FontWeight="Bold" Foreground="#94A3B8" Margin="0,0,0,8"/>
+                        <TextBlock Text="{Binding Metrics.DeliveredOrders, FallbackValue='0'}"
+                                   FontSize="26" FontWeight="Black" Foreground="#10B981"/>
+                        <TextBlock Text="{Binding Metrics.TotalCustomers, StringFormat='{}Active Customers: {0}'}"
+                                   FontSize="12" Foreground="#94A3B8" Margin="0,6,0,0"/>
+                    </StackPanel>
+                </Border>
+            </UniformGrid>
+
+            <!-- Status Distribution Pills -->
+            <Border Style="{StaticResource Card}" Margin="0,0,0,18" Padding="16,14">
+                <StackPanel>
+                    <TextBlock Text="Orders By Stage" FontSize="13" FontWeight="Bold" Foreground="#94A3B8" Margin="0,0,0,10"/>
+                    <ItemsControl ItemsSource="{Binding StatusCounts}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border Background="#101935" CornerRadius="8" Padding="12,8" Margin="0,0,10,6"
+                                        BorderBrush="#2E3C61" BorderThickness="1">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding StatusName}" FontSize="12" FontWeight="SemiBold" Foreground="#F8FAFC"/>
+                                        <Border Background="#06B6D4" CornerRadius="10" Margin="8,0,0,0" Padding="8,1" VerticalAlignment="Center">
+                                            <TextBlock Text="{Binding Count}" FontSize="11" FontWeight="Bold" Foreground="#041E26"/>
+                                        </Border>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </Border>
+
+            <!-- Recent Orders Grid -->
+            <Border Style="{StaticResource Card}" Padding="20">
+                <StackPanel>
+                    <TextBlock Text="Recent Orders Activity" FontSize="15" FontWeight="Bold" Foreground="#F8FAFC" Margin="0,0,0,14"/>
+                    <DataGrid ItemsSource="{Binding RecentOrders}" AutoGenerateColumns="False" IsReadOnly="True"
+                              Background="#101935" BorderThickness="0"
+                              RowBackground="#172242" AlternatingRowBackground="#121C38"
+                              Foreground="#F8FAFC" GridLinesVisibility="None" HeadersVisibility="Column"
+                              MinHeight="220">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Order Code" Binding="{Binding OrderCode}" Width="150"/>
+                            <DataGridTextColumn Header="Customer" Binding="{Binding DisplayCustomer}" Width="160"/>
+                            <DataGridTextColumn Header="Phone" Binding="{Binding UserPhone}" Width="120"/>
+                            <DataGridTextColumn Header="Amount" Binding="{Binding FormattedTotal}" Width="110"/>
+                            <DataGridTextColumn Header="Status" Binding="{Binding StatusDisplay}" Width="130"/>
+                            <DataGridTextColumn Header="Payment" Binding="{Binding PaymentStatus}" Width="100"/>
+                            <DataGridTextColumn Header="Date" Binding="{Binding CreatedAt}" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

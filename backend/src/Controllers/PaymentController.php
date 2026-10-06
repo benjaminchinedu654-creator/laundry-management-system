@@ -1,0 +1,2 @@
+<?php
+// Initiate & verify payments
