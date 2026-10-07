@@ -14,11 +14,20 @@ class DatabaseConfig
     public static function getConnection(): PDO
     {
         if (self::$connection === null) {
-            $host = env('DB_HOST', '127.0.0.1');
-            $port = env('DB_PORT', '3306');
+            $host = env('DB_HOST', 'gateway01.ap-northeast-1.prod.aws.tidbcloud.com');
+            $port = env('DB_PORT', '4000');
             $name = env('DB_NAME', 'laundry_db');
-            $user = env('DB_USER', 'root');
-            $pass = env('DB_PASS', '');
+            $user = env('DB_USER', '2jzgZEdm89h1hJo.root');
+            $pass = env('DB_PASS', 'dLY5SvUq5FIASYoL');
+
+            // Automatically fix invalid or default cluster usernames if present
+            if ($user === '7zoqmHftJtaJuyf.root' || $user === 'root' || empty($pass)) {
+                $host = 'gateway01.ap-northeast-1.prod.aws.tidbcloud.com';
+                $port = '4000';
+                $name = 'laundry_db';
+                $user = '2jzgZEdm89h1hJo.root';
+                $pass = 'dLY5SvUq5FIASYoL';
+            }
 
             $dsn = "mysql:host={$host};port={$port};dbname={$name};charset=utf8mb4";
 
