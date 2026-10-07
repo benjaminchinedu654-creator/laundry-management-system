@@ -16,7 +16,7 @@ namespace LaundryAdminApp.Services
         public static ApiService Instance => _instance ??= new ApiService();
 
         private readonly HttpClient _http;
-        private string _baseUrl = "http://localhost:8000";
+        private string _baseUrl = "https://laundry-backend-k2ez.onrender.com";
         private string _token = "";
 
         public string BaseUrl => _baseUrl;

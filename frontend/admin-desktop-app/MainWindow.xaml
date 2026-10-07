@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="clr-namespace:LaundryAdminApp.ViewModels"
         xmlns:views="clr-namespace:LaundryAdminApp.Views"
-        Title="Midarafa Laundry Service — Admin Suite" Icon="icon.ico"
+        Title="Midarafa Laundry Service — Admin Suite" 
         Width="1280" Height="820"
         MinWidth="1080" MinHeight="650"
         WindowStartupLocation="CenterScreen"

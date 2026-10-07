@@ -33,7 +33,7 @@
             <TextBlock Text="API SERVER URL" FontSize="10" FontWeight="Bold"
                        Foreground="#94A3B8" Margin="0,0,0,5"/>
             <TextBox x:Name="ServerUrlBox" Style="{StaticResource ModernTextBox}"
-                     Margin="0,0,0,14" Height="38"/>
+                     Text="https://laundry-backend-k2ez.onrender.com" Margin="0,0,0,14" Height="38"/>
 
             <!-- Admin Email -->
             <TextBlock Text="ADMIN EMAIL" FontSize="10" FontWeight="Bold"

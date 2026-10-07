@@ -6,7 +6,7 @@ namespace LaundryAdminApp.ViewModels
 {
     public class LoginViewModel : BaseViewModel
     {
-        public string ServerUrl { get; set; } = "http://localhost:8000";
+        public string ServerUrl { get; set; } = "https://laundry-backend-k2ez.onrender.com";
         public string Email { get; set; }     = "admin@laundryapp.com";
         public string Password { get; set; }  = "admin123";
 

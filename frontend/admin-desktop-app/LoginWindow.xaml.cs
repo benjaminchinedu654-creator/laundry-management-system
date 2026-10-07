@@ -13,7 +13,7 @@ namespace LaundryAdminApp
         {
             InitializeComponent();
             _vm = new LoginViewModel();
-            ServerUrlBox.Text = _vm.ServerUrl;
+            ServerUrlBox.Text = "https://laundry-backend-k2ez.onrender.com";
             EmailBox.Text     = _vm.Email;
             PasswordBox.Password = _vm.Password;
 

@@ -236,7 +236,7 @@
                     <Border x:Name="ItemBorder" Background="{TemplateBinding Background}"
                             Padding="{TemplateBinding Padding}" SnapsToDevicePixels="True"
                             CornerRadius="4" Margin="2,1">
-                        <ContentPresenter TextElement.Foreground="{TemplateBinding Foreground}"/>
+                        <ContentPresenter />
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
@@ -308,7 +308,7 @@
                                           Margin="10,0,26,0"
                                           VerticalAlignment="Center"
                                           HorizontalAlignment="Left"
-                                          TextElement.Foreground="{TemplateBinding Foreground}"/>
+                                          />
                         <Popup x:Name="Popup"
                                Placement="Bottom"
                                IsOpen="{TemplateBinding IsDropDownOpen}"
