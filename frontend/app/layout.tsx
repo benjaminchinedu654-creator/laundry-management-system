@@ -5,7 +5,7 @@ import { AuthProvider } from '@/context/AuthContext';
 import { AdminAuthProvider } from '@/context/AdminAuthContext';
 
 export const metadata: Metadata = {
-  title: 'LAUNDRY & VALET — Curated Garment Care Atelier',
+  title: 'MIDARAFA LAUNDRY SERVICE — Curated Garment Care Atelier',
   description: 'Bespoke laundry, artisanal steam pressing, and white-glove valet collection.',
 };
 

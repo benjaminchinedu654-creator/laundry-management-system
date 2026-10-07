@@ -1,7 +1,7 @@
 ﻿<Window x:Class="LaundryAdminApp.LoginWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Laundry Express — Admin Login"
+        Title="Midarafa Laundry Service — Admin Login"
         Width="460" Height="590"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
@@ -14,9 +14,9 @@
         </Border.Effect>
         <StackPanel>
             <!-- Logo & Brand Header -->
-            <TextBlock Text="LAUNDRY" FontSize="36" FontWeight="Black"
+            <TextBlock Text="MIDARAFA" FontSize="36" FontWeight="Black"
                        Foreground="#06B6D4" HorizontalAlignment="Center" Margin="0,4,0,0"/>
-            <TextBlock Text="EXPRESS" FontSize="12" FontWeight="Bold"
+            <TextBlock Text="LAUNDRY SERVICE" FontSize="12" FontWeight="Bold"
                        Foreground="#94A3B8" HorizontalAlignment="Center" Margin="0,1,0,0"/>
             <TextBlock Text="ADMIN MANAGEMENT SUITE" FontSize="10" FontWeight="SemiBold"
                        Foreground="#0891B2" HorizontalAlignment="Center" Margin="0,2,0,18"/>

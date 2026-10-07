@@ -21,7 +21,7 @@ function env(string $key, mixed $default = null): mixed
 }
 
 // App constants
-define('APP_NAME',    env('APP_NAME', 'Laundry App'));
+define('APP_NAME',    env('APP_NAME', 'Midarafa Laundry Service'));
 define('APP_ENV',     env('APP_ENV', 'production'));
 define('APP_URL',     env('APP_URL', 'http://localhost:8000'));
 define('APP_DEBUG',   filter_var(env('APP_DEBUG', true), FILTER_VALIDATE_BOOLEAN));

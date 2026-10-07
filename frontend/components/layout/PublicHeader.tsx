@@ -16,12 +16,17 @@ export function PublicHeader() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-12">
         {/* Brand Logo */}
         <Link href="/" className="group flex flex-col">
-          <span className="font-serif-luxury text-2xl font-bold tracking-tight text-[#1A1A1A] transition group-hover:text-[#8C6D46]">
-            LAUNDRY <span className="font-light italic">&amp;</span> VALET
-          </span>
-          <span className="text-[9px] font-semibold tracking-[0.3em] text-[#8C7A6B] uppercase">
-            Curated Garment Care
-          </span>
+          <div className="flex items-center gap-3">
+          <img src="/images/midarafa-logo.png" alt="Midarafa" className="h-10 w-10 rounded-full shadow-sm ring-1 ring-[#8C6D46]/20 transition group-hover:scale-105" />
+          <div className="flex flex-col">
+            <span className="font-serif-luxury text-xl lg:text-2xl font-bold tracking-tight text-[#1A1A1A] transition group-hover:text-[#8C6D46]">
+              MIDARAFA
+            </span>
+            <span className="text-[9px] font-semibold tracking-[0.25em] text-[#8C7A6B] uppercase">
+              LAUNDRY SERVICE · CURATED CARE
+            </span>
+          </div>
+        </div>
         </Link>
 
         {/* Center Nav */}

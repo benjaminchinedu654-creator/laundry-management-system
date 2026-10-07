@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="clr-namespace:LaundryAdminApp.ViewModels"
         xmlns:views="clr-namespace:LaundryAdminApp.Views"
-        Title="Laundry Express — Admin Suite" Icon="icon.ico"
+        Title="Midarafa Laundry Service — Admin Suite" Icon="icon.ico"
         Width="1280" Height="820"
         MinWidth="1080" MinHeight="650"
         WindowStartupLocation="CenterScreen"
@@ -41,9 +41,9 @@
             <DockPanel>
                 <!-- Brand Header -->
                 <StackPanel DockPanel.Dock="Top" Margin="20,24,20,16">
-                    <TextBlock Text="LAUNDRY" FontSize="26" FontWeight="Black"
+                    <TextBlock Text="MIDARAFA" FontSize="26" FontWeight="Black"
                                Foreground="#06B6D4" HorizontalAlignment="Center"/>
-                    <TextBlock Text="EXPRESS" FontSize="11" FontWeight="Bold"
+                    <TextBlock Text="LAUNDRY SERVICE" FontSize="11" FontWeight="Bold"
                                Foreground="#94A3B8" HorizontalAlignment="Center" Margin="0,1,0,0"/>
                     <TextBlock Text="ADMIN MANAGEMENT SUITE" FontSize="9" FontWeight="Medium"
                                Foreground="#0891B2" HorizontalAlignment="Center" Margin="0,3,0,0"/>

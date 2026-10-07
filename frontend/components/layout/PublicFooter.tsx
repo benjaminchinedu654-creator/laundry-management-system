@@ -18,7 +18,7 @@ export function PublicFooter() {
           {/* Brand Col */}
           <div className="md:col-span-1">
             <span className="font-serif-luxury text-2xl font-bold tracking-tight text-[#FAF8F5]">
-              LAUNDRY <span className="font-light italic text-[#C8963E]">&amp;</span> VALET
+              MIDARAFA <span className="font-light italic text-[#C8963E]">LAUNDRY SERVICE</span>
             </span>
             <p className="mt-4 text-xs leading-relaxed text-[#A0988E]">
               A bespoke textile care studio offering artisanal steam pressing, organic eco-clean dry cleaning, and seamless valet delivery.
@@ -64,15 +64,15 @@ export function PublicFooter() {
             <div className="mt-4 space-y-2 text-xs text-[#A0988E]">
               <p className="text-white font-medium">Lagos Metropolitan Valet</p>
               <p>Daily Pickups: 7:00 AM — 9:00 PM</p>
-              <p className="text-[#C8963E]">concierge@laundryapp.com</p>
-              <p className="font-mono text-[11px]">+234 (0) 800-LAUNDRY</p>
+              <p className="text-[#C8963E]">concierge@midarafa.com</p>
+              <p className="font-mono text-[11px]">+234 (0) 800-MIDARAFA</p>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="mt-16 flex flex-col items-center justify-between border-t border-[#262D35] pt-8 text-[11px] tracking-wider text-[#736A5E] sm:flex-row">
-          <p>© {new Date().getFullYear()} LAUNDRY &amp; VALET ATELIER. ALL RIGHTS RESERVED.</p>
+          <p>© {new Date().getFullYear()} MIDARAFA LAUNDRY SERVICE. ALL RIGHTS RESERVED.</p>
           <p className="mt-3 sm:mt-0 uppercase font-medium">DESIGNED IN AN EDITORIAL MAGAZINE AESTHETIC</p>
         </div>
       </div>
