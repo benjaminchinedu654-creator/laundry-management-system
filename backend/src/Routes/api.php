@@ -13,6 +13,20 @@ use App\Middleware\AuthMiddleware;
 /** @var App\Core\Router $router */
 
 // -------------------------------
+// Root welcome route (public)
+// -------------------------------
+$router->get('/', function () {
+    Response::success([
+        'name'      => APP_NAME,
+        'status'    => 'online',
+        'health'    => '/api/health',
+        'setup_db'  => '/api/setup-db',
+        'services'  => '/api/services',
+    ], 'Laundry Management API is running');
+});
+
+
+// -------------------------------
 // Health check (public)
 // -------------------------------
 $router->get('/api/health', function () {
